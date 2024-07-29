@@ -2,6 +2,9 @@
 # Header section
 require_once('estaticos/header.php');
 $enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$claseEstaticaGlobal = 'active open';
+$claseEstatica = 'active';
+
 
 ?>
 <script>
@@ -25,7 +28,7 @@ $enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstatica;}?>>">
             <a href="../index.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Inicio</div>
@@ -58,14 +61,14 @@ $enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
                 </li>
             </ul>
         </li>
-        <li class="menu-item">
+        <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                 <div data-i18n="Authentications">Logistica</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="../capacitacion.html" class="menu-link" target="_blank">
+                <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstatica;}?>">
+                    <a href="../capacitacion.html?trafico" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
                 </li>
