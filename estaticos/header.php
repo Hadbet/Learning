@@ -65,7 +65,7 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstatica;}?>">
-                    <a href="../capacitacion.php?trafico" class="menu-link" target="_blank">
+                    <a href="capacitacion.php?trafico" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
                 </li>
