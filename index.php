@@ -59,6 +59,11 @@
     <div class="layout-container">
         <!-- Menu -->
 
+        <?php
+        # Header section
+            require_once('estaticos/header.php');
+    ?>
+
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
                 <a href="index.html" class="app-brand-link">
