@@ -29,7 +29,7 @@ $claseEstatica = 'active';
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstatica;}?>>">
+        <li class="menu-item <?php if (str_contains($enlace_actual, 'index')) {echo $claseEstatica;}?>>">
             <a href="../index.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Inicio</div>
@@ -62,13 +62,13 @@ $claseEstatica = 'active';
                 </li>
             </ul>
         </li>
-        <li class="menu-item <?php if (str_contains($claseEstatica, 'trafico')) {echo $claseEstaticaGlobal;}?>">
+        <li class="menu-item <?php if (str_contains($enlace_actual, 'trafico')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                 <div data-i18n="Authentications">Logistica</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item <?php if (str_contains($claseEstatica, 'trafico')) {echo $claseEstatica;}?>">
+                <li class="menu-item <?php if (str_contains($enlace_actual, 'trafico')) {echo $claseEstatica;}?>">
                     <a href="capacitacion.php?trafico" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
