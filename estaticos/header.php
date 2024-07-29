@@ -1,4 +1,12 @@
+<?php
+# Header section
+require_once('estaticos/header.php');
+$enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 
+?>
+<script>
+    alert('<?php echo $enlace_actual;?>');
+</script>
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="../index.html" class="app-brand-link">
