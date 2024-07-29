@@ -58,13 +58,13 @@ $claseEstatica = 'active';
                 </li>
             </ul>
         </li>
-        <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstaticaGlobal;}?>">
+        <li class="menu-item <?php if (str_contains($claseEstatica, 'trafico')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                 <div data-i18n="Authentications">Logistica</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item <?php if (str_contains($claseEstatica, 'index')) {echo $claseEstatica;}?>">
+                <li class="menu-item <?php if (str_contains($claseEstatica, 'trafico')) {echo $claseEstatica;}?>">
                     <a href="capacitacion.php?trafico" class="menu-link" target="_blank">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
