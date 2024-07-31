@@ -5,7 +5,7 @@ $duracionCurso = $_POST['txtDuracionCurso'];
 $descripcionCurso = $_POST['txtDescripcionCurso'];
 $imagenCurso = $_FILES['txtImagen'];
 $nombreImagen = uniqid() . '.' . pathinfo($imagenCurso['name'], PATHINFO_EXTENSION); // Genera un nombre único para la imagen
-$rutaDestino = 'ruta/a/tu/carpeta/' . $nombreImagen;
+$rutaDestino = 'images/portadas/' . $nombreImagen;
 
 if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
     echo "La imagen se ha subido correctamente.";
