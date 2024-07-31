@@ -44,6 +44,6 @@ for ($i = 0; $i < count($_FILES['txtManualModulo']['name']); $i++) {
         echo "No se subió ningún manual, o hubo un error al subirlo.";
     }
 }
-
+echo ini_get('max_file_uploads');
 // Ahora tienes todos los valores del formulario en variables PHP
 ?>
