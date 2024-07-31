@@ -29,6 +29,8 @@ $manualModulo = array();
 $paginaModulo = array();
 $examenModulo = array();
 
+echo $_POST['contador'];
+
 for ($i = 1; $i <= $_POST['contador']; $i++) {
     $nombreModulo[] = $_POST['txtNombreModulo' . $i];
     $descripcionModulo[] = $_POST['txtDescripcionModulo' . $i];
