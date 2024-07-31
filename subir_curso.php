@@ -159,7 +159,7 @@
 
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Cursos/</span> <span id="nombreLabel">Nombre</span></h4>
-                    <form action="dao/admin/insertCurso.php" onsubmit="return validarInputs()" method="post">
+                    <form enctype="multipart/form-data" action="dao/admin/insertCurso.php" onsubmit="return validarInputs()" method="post">
                     <div class="mb-3">
                         <label class="form-label" for="txtNombreCurso">Nombre</label>
                         <input type="text" class="form-control" name="txtNombreCurso" id="txtNombreCurso"
