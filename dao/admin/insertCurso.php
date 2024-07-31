@@ -35,6 +35,21 @@ for ($i = 1; $i <= count($_POST['txtNombreModulo']); $i++) {
     $manualModulo[] = $_POST['txtManualModulo' . $i];
     $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
     $examenModulo[] = $_POST['basic-default-fullname' . $i];
+
+    if (isset($_FILES[$manualModulo[$i]]) && $_FILES[$manualModulo[$i]]['error'] == 0) {
+        $manualCurso = $_FILES[$manualModulo[$i]];
+        $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
+        $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
+
+        if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
+            echo "El manual se ha subido correctamente.";
+        } else {
+            echo "Hubo un error al subir el manual.";
+            print_r(error_get_last());
+        }
+    } else {
+        echo "No se subió ningún manual, o hubo un error al subirlo.";
+    }
 }
 
 // Ahora tienes todos los valores del formulario en variables PHP

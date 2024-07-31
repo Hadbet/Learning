@@ -220,7 +220,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="txtManualModulo1">Manual</label>
-                                            <input type="text" class="form-control" name="txtManualModulo1" id="txtManualModulo1"
+                                            <input type="file" class="form-control" name="txtManualModulo1" id="txtManualModulo1"
                                                    />
                                         </div>
                                         <div class="mb-3">
@@ -334,7 +334,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtManualModulo${bandera}">Manual</label>
-                        <input type="text" class="form-control" name="txtManualModulo${bandera}" id="txtManualModulo${bandera}" />
+                        <input type="file" class="form-control" name="txtManualModulo${bandera}" id="txtManualModulo${bandera}" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtPaginaModulo${bandera}">Página</label>
