@@ -8,7 +8,7 @@ $imagenCurso = $_FILES['txtImagen'];
 if (isset($_FILES['txtImagen']) && $_FILES['txtImagen']['error'] == 0) {
     $imagenCurso = $_FILES['txtImagen'];
     $nombreImagen = uniqid() . '.' . pathinfo($imagenCurso['name'], PATHINFO_EXTENSION);
-    $rutaDestino = 'ruta/a/tu/carpeta/' . $nombreImagen;
+    $rutaDestino = '../../learning/images/portadas/' . $nombreImagen;
 
     if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
         echo "La imagen se ha subido correctamente.";
