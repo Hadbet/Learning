@@ -5,7 +5,6 @@ $enlace_actual = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 $claseEstaticaGlobal = 'active open';
 $claseEstatica = 'active';
 
-
 ?>
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
@@ -65,12 +64,12 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item <?php if (str_contains($enlace_actual, 'trafico')) {echo $claseEstatica;}?>">
-                    <a href="capacitacion.php?trafico" class="menu-link" target="_blank">
+                    <a href="capacitacion.php?trafico" class="menu-link">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="auth-register-basic.html" class="menu-link" target="_blank">
+                    <a href="auth-register-basic.html" class="menu-link" >
                         <div data-i18n="Basic">Planeadores</div>
                     </a>
                 </li>
@@ -125,12 +124,12 @@ $claseEstatica = 'active';
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Error</div>
+                        <div data-i18n="Error">Routing</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="pages-misc-under-maintenance.html" class="menu-link">
-                        <div data-i18n="Under Maintenance">Under Maintenance</div>
+                        <div data-i18n="Under Maintenance">Practicantes</div>
                     </a>
                 </li>
             </ul>
@@ -143,12 +142,12 @@ $claseEstatica = 'active';
             <ul class="menu-sub">
                 <li class="menu-item">
                     <a href="pages-misc-error.html" class="menu-link">
-                        <div data-i18n="Error">Error</div>
+                        <div data-i18n="Error">Soporte</div>
                     </a>
                 </li>
                 <li class="menu-item">
                     <a href="pages-misc-under-maintenance.html" class="menu-link">
-                        <div data-i18n="Under Maintenance">Under Maintenance</div>
+                        <div data-i18n="Under Maintenance">Programación</div>
                     </a>
                 </li>
             </ul>
