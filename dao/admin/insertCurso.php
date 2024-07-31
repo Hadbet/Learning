@@ -32,12 +32,11 @@ for ($i = 1; $i <= count($_POST['txtNombreModulo']); $i++) {
     $nombreModulo[] = $_POST['txtNombreModulo' . $i];
     $descripcionModulo[] = $_POST['txtDescripcionModulo' . $i];
     $urlModulo[] = $_POST['txtUrlModulo' . $i];
-    $manualModulo[] = $_POST['txtManualModulo' . $i];
     $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
     $examenModulo[] = $_POST['basic-default-fullname' . $i];
 
-    if (isset($_FILES[$manualModulo[$i]]) && $_FILES[$manualModulo[$i]]['error'] == 0) {
-        $manualCurso = $_FILES[$manualModulo[$i]];
+    if (isset($_FILES['txtManualModulo' . $i]) && $_FILES['txtManualModulo' . $i]['error'] == 0) {
+        $manualCurso = $_FILES['txtManualModulo' . $i];
         $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
         $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
 
