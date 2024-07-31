@@ -252,14 +252,15 @@
 
 
                     </div>
-                    </form>
                     <div class="row">
                         <div class="col-6">
-                            <button type="submit" onclick="agregarModulo()" class="btn btn-primary">Agregar modulo</button>
+                            <button onclick="agregarModulo()" class="btn btn-primary">Agregar modulo</button>
                         </div>
 
-                        <button type="submit" onclick="validarInputs()" class="btn btn-primary mt-5">Enviar</button>
+                        <button type="submit" class="btn btn-primary mt-5">Enviar</button>
                     </div>
+
+                    </form>
                 </div>
                 <!-- / Content -->
 
