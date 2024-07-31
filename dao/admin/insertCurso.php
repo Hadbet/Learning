@@ -20,6 +20,7 @@ if (isset($_FILES['txtImagen']) && $_FILES['txtImagen']['error'] == 0) {
     echo "No se subió ningún archivo, o hubo un error al subirlo.";
 }
 
+
 // Para los módulos y exámenes, como tienes varios, puedes recorrerlos en un bucle
 $nombreModulo = array();
 $descripcionModulo = array();
@@ -28,13 +29,20 @@ $manualModulo = array();
 $paginaModulo = array();
 $examenModulo = array();
 
-for ($i = 0; $i < count($_FILES['txtManualModulo']['name']); $i++) {
-    if ($_FILES['txtManualModulo']['error'][$i] == 0) {
-        $manualCurso = $_FILES['txtManualModulo']['tmp_name'][$i];
-        $nombreManual = uniqid() . '.' . pathinfo($_FILES['txtManualModulo']['name'][$i], PATHINFO_EXTENSION);
+for ($i = 1; $i <= $_POST['contador']; $i++) {
+    $nombreModulo[] = $_POST['txtNombreModulo' . $i];
+    $descripcionModulo[] = $_POST['txtDescripcionModulo' . $i];
+    $urlModulo[] = $_POST['txtUrlModulo' . $i];
+    $manualModulo[] = $_POST['txtManualModulo' . $i];
+    $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
+    $examenModulo[] = $_POST['basic-default-fullname' . $i];
+
+    if (isset($_FILES['txtManualModulo' . $i]) && $_FILES['txtManualModulo' . $i]['error'] == 0) {
+        $manualCurso = $_FILES['txtManualModulo' . $i];
+        $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
         $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
 
-        if (move_uploaded_file($manualCurso, $rutaDestinoManual)) {
+        if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
             echo "El manual se ha subido correctamente.";
         } else {
             echo "Hubo un error al subir el manual.";
@@ -44,6 +52,6 @@ for ($i = 0; $i < count($_FILES['txtManualModulo']['name']); $i++) {
         echo "No se subió ningún manual, o hubo un error al subirlo.";
     }
 }
-echo ini_get('max_file_uploads');
+
 // Ahora tienes todos los valores del formulario en variables PHP
 ?>
