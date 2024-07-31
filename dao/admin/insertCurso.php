@@ -4,16 +4,22 @@ $areaCurso = $_POST['txtAreaCurso'];
 $duracionCurso = $_POST['txtDuracionCurso'];
 $descripcionCurso = $_POST['txtDescripcionCurso'];
 $imagenCurso = $_FILES['txtImagen'];
-$nombreImagen = uniqid() . '.' . pathinfo($imagenCurso['name'], PATHINFO_EXTENSION); // Genera un nombre único para la imagen
-$rutaDestino =  __DIR__ .'/portadas/' . $nombreImagen;
-echo $rutaDestino;
 
-if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
-    echo "La imagen se ha subido correctamente.";
+if (isset($_FILES['txtImagen']) && $_FILES['txtImagen']['error'] == 0) {
+    $imagenCurso = $_FILES['txtImagen'];
+    $nombreImagen = uniqid() . '.' . pathinfo($imagenCurso['name'], PATHINFO_EXTENSION);
+    $rutaDestino = 'ruta/a/tu/carpeta/' . $nombreImagen;
+
+    if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
+        echo "La imagen se ha subido correctamente.";
+    } else {
+        echo "Hubo un error al subir la imagen.";
+        print_r(error_get_last());
+    }
 } else {
-    echo "Hubo un error al subir la imagen.";
-    print_r(error_get_last());
+    echo "No se subió ningún archivo, o hubo un error al subirlo.";
 }
+
 // Para los módulos y exámenes, como tienes varios, puedes recorrerlos en un bucle
 $nombreModulo = array();
 $descripcionModulo = array();
