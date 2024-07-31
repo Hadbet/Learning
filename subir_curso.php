@@ -201,31 +201,31 @@
                                 <div class="card-body">
                                         <div class="mb-3">
                                             <label class="form-label" for="txtNombreModulo1">Nombre</label>
-                                            <input type="text" class="form-control" name="txtNombreModulo1" id="txtNombreModulo1"
+                                            <input type="text" class="form-control" name="txtNombreModulo[]" id="txtNombreModulo1"
                                                    placeholder="John Doe"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="txtDescripcionModulo1">Descripción</label>
                                             <textarea
                                                     id="txtDescripcionModulo1"
-                                                    name="txtDescripcionModulo1"
+                                                    name="txtDescripcionModulo[]"
                                                     class="form-control"
                                                     placeholder="Bla bla bla"
                                             ></textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="txtUrlModulo1">url</label>
-                                            <input type="text" class="form-control" name="txtUrlModulo1" id="txtUrlModulo1"
+                                            <input type="text" class="form-control" name="txtUrlModulo[]" id="txtUrlModulo1"
                                                    placeholder="www.grammer.com"/>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="txtManualModulo1">Manual</label>
-                                            <input type="file" class="form-control" name="txtManualModulo1" id="txtManualModulo1"
+                                            <input type="file" class="form-control" name="txtManualModulo[]" id="txtManualModulo1"
                                                    />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label" for="txtPaginaModulo1">Página</label>
-                                            <input type="text" class="form-control" name="txtPaginaModulo1" id="txtPaginaModulo1"
+                                            <input type="text" class="form-control" name="txtPaginaModulo[]" id="txtPaginaModulo1"
                                                    placeholder="www.grammer.com"/>
                                         </div>
                                 </div>
@@ -240,7 +240,7 @@
                                 <div class="card-body">
                                         <div class="mb-3">
                                             <label class="form-label" for="txtFormulario1">Formulario de google</label>
-                                            <input type="text" class="form-control" name="txtFormulario1" id="txtFormulario1"
+                                            <input type="text" class="form-control" name="txtFormulario[]" id="txtFormulario1"
                                                    placeholder="forms google.com"/>
                                         </div>
 
@@ -322,23 +322,23 @@
                 <form>
                     <div class="mb-3">
                         <label class="form-label" for="txtNombreModulo${bandera}">Nombre</label>
-                        <input type="text" class="form-control" name="txtNombreModulo${bandera}" id="txtNombreModulo${bandera}" placeholder="John Doe"/>
+                        <input type="text" class="form-control" name="txtNombreModulo[]" id="txtNombreModulo${bandera}" placeholder="John Doe"/>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtDescripcionModulo${bandera}">Descripción</label>
-                        <textarea name="txtDescripcionModulo${bandera}" id="txtDescripcionModulo${bandera}" class="form-control" placeholder="Bla bla bla" ></textarea>
+                        <textarea  name="txtDescripcionModulo[]" id="txtDescripcionModulo${bandera}" class="form-control" placeholder="Bla bla bla" ></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtUrlModulo${bandera}">url</label>
-                        <input type="text" class="form-control" name="txtUrlModulo${bandera}" id="txtUrlModulo${bandera}" placeholder="www.grammer.com"/>
+                        <input type="text" class="form-control" name="txtUrlModulo[]" id="txtUrlModulo${bandera}" placeholder="www.grammer.com"/>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtManualModulo${bandera}">Manual</label>
-                        <input type="file" class="form-control" name="txtManualModulo${bandera}" id="txtManualModulo${bandera}" />
+                        <input type="file" class="form-control" name="txtManualModulo[]" id="txtManualModulo${bandera}" />
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtPaginaModulo${bandera}">Página</label>
-                        <input type="text" class="form-control" name="txtPaginaModulo${bandera}" id="txtPaginaModulo${bandera}" placeholder="www.grammer.com"/>
+                        <input type="text" class="form-control" name="txtPaginaModulo[]" id="txtPaginaModulo${bandera}" placeholder="www.grammer.com"/>
                     </div>
                 </form>
             </div>
@@ -355,7 +355,7 @@
                 <form>
                     <div class="mb-3">
                         <label class="form-label" for="txtFormulario${bandera}">Formulario de google</label>
-                        <input type="text" class="form-control" name="txtFormulario${bandera}" id="txtFormulario${bandera}"
+                        <input type="text" class="form-control" name="txtFormulario[]" id="txtFormulario${bandera}"
                                placeholder="forms google.com"/>
                     </div>
                 </form>
