@@ -12,6 +12,7 @@ if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
     echo "La imagen se ha subido correctamente.";
 } else {
     echo "Hubo un error al subir la imagen.";
+    print_r(error_get_last());
 }
 // Para los módulos y exámenes, como tienes varios, puedes recorrerlos en un bucle
 $nombreModulo = array();
