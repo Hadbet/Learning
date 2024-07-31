@@ -28,19 +28,13 @@ $manualModulo = array();
 $paginaModulo = array();
 $examenModulo = array();
 
-for ($i = 1; $i <= count($_POST['txtNombreModulo']); $i++) {
-    $nombreModulo[] = $_POST['txtNombreModulo' . $i];
-    $descripcionModulo[] = $_POST['txtDescripcionModulo' . $i];
-    $urlModulo[] = $_POST['txtUrlModulo' . $i];
-    $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
-    $examenModulo[] = $_POST['basic-default-fullname' . $i];
-
-    if (isset($_FILES['txtManualModulo' . $i]) && $_FILES['txtManualModulo' . $i]['error'] == 0) {
-        $manualCurso = $_FILES['txtManualModulo' . $i];
-        $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
+for ($i = 0; $i < count($_FILES['txtManualModulo']['name']); $i++) {
+    if ($_FILES['txtManualModulo']['error'][$i] == 0) {
+        $manualCurso = $_FILES['txtManualModulo']['tmp_name'][$i];
+        $nombreManual = uniqid() . '.' . pathinfo($_FILES['txtManualModulo']['name'][$i], PATHINFO_EXTENSION);
         $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
 
-        if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
+        if (move_uploaded_file($manualCurso, $rutaDestinoManual)) {
             echo "El manual se ha subido correctamente.";
         } else {
             echo "Hubo un error al subir el manual.";
