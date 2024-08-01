@@ -44,6 +44,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
         }
     } else {
         echo "No se subió ningún manual, o hubo un error al subirlo.";
+        print_r(error_get_last());
     }
 }
 
