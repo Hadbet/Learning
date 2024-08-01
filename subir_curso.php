@@ -30,6 +30,9 @@
             rel="stylesheet"
     />
 
+    <script src="libs/sweetalert/sweetalert.js"></script>
+
+
     <!-- Icons. Uncomment required icon fonts -->
     <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css"/>
 
@@ -445,7 +448,11 @@
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // Aquí puedes agregar el código que se ejecutará si todo salió bien
+                    Swal.fire({
+                        title: "Cursos ingresado",
+                        text: "Ya lo puedes ver en el inicio",
+                        icon: "success"
+                    });
                     console.log(data.message);
                 } else {
                     // Aquí puedes agregar el código que se ejecutará si algo salió mal
