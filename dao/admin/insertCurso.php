@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$response = array('status' => 'success');
+$response = array('status' => 'success','message' => 'true');
 
 $nombreCurso = $_POST['txtNombreCurso'];
 $areaCurso = $_POST['txtAreaCurso'];
