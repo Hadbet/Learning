@@ -36,7 +36,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     $urlModulo[] = $_POST['txtUrlModulo' . $i];
     $manualModulo[] = $_POST['txtManualModulo' . $i];
     $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
-    $examenModulo[] = $_POST['basic-default-fullname' . $i];
+    $examenModulo[] = $_POST['txtFormulario' . $i];
 
     echo 'txtManualModulo' . $i;
 
