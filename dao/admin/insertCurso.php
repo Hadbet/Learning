@@ -31,20 +31,23 @@ $examenModulo = array();
 
 
 for ($i = 1; $i <= $_POST['contador']; $i++) {
-    if (isset($_FILES['txtManualModulo' . $i]) && $_FILES['txtManualModulo' . $i]['error'] == 0) {
-        $manualCurso = $_FILES['txtManualModulo' . $i];
-        $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
-        $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
+    if (isset($_FILES['txtManualModulo' . $i])) {
+        if ($_FILES['txtManualModulo' . $i]['error'] == 0) {
+            $manualCurso = $_FILES['txtManualModulo' . $i];
+            $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
+            $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
 
-        if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
-            echo "El manual se ha subido correctamente.";
+            if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
+                echo "El manual se ha subido correctamente.";
+            } else {
+                echo "Hubo un error al subir el manual.";
+                print_r(error_get_last());
+            }
         } else {
-            echo "Hubo un error al subir el manual.";
-            print_r(error_get_last());
+            echo "No se subió ningún manual, o hubo un error al subirlo.";
         }
-    } else {
-        echo "No se subió ningún manual, o hubo un error al subirlo.";
-        print_r(error_get_last());
+    }else{
+        echo "no existe";
     }
 }
 
