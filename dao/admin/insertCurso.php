@@ -31,15 +31,6 @@ $examenModulo = array();
 
 
 for ($i = 1; $i <= $_POST['contador']; $i++) {
-    $nombreModulo[] = $_POST['txtNombreModulo' . $i];
-    $descripcionModulo[] = $_POST['txtDescripcionModulo' . $i];
-    $urlModulo[] = $_POST['txtUrlModulo' . $i];
-    $manualModulo[] = $_POST['txtManualModulo' . $i];
-    $paginaModulo[] = $_POST['txtPaginaModulo' . $i];
-    $examenModulo[] = $_POST['txtFormulario' . $i];
-
-    echo  $manualModulo[$i];
-
     if (isset($_FILES['txtManualModulo' . $i]) && $_FILES['txtManualModulo' . $i]['error'] == 0) {
         $manualCurso = $_FILES['txtManualModulo' . $i];
         $nombreManual = uniqid() . '.' . pathinfo($manualCurso['name'], PATHINFO_EXTENSION);
@@ -53,7 +44,6 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
         }
     } else {
         echo "No se subió ningún manual, o hubo un error al subirlo.";
-        print_r(error_get_last());
     }
 }
 
