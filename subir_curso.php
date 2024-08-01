@@ -387,8 +387,8 @@
         }
 
         alert("Todos los campos de entrada están llenos.");
-        return true;
         subirData();
+        return true;
     }
 
     function rellenarTitulo(){
