@@ -443,7 +443,15 @@
             body: formData
         })
             .then(response => response.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.status === 'success') {
+                    // Aquí puedes agregar el código que se ejecutará si todo salió bien
+                    console.log(data.message);
+                } else {
+                    // Aquí puedes agregar el código que se ejecutará si algo salió mal
+                    console.error(data.message);
+                }
+            })
             .catch((error) => console.error('Error:', error));
     }
 </script>
