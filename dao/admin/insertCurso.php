@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 $nombreCurso = $_POST['txtNombreCurso'];
 $areaCurso = $_POST['txtAreaCurso'];
 $duracionCurso = $_POST['txtDuracionCurso'];
@@ -11,15 +13,16 @@ if (isset($_FILES['txtImagen']) && $_FILES['txtImagen']['error'] == 0) {
     $rutaDestino = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/images/portadas/' . $nombreImagen;
 
     if (move_uploaded_file($imagenCurso['tmp_name'], $rutaDestino)) {
-        echo "La imagen se ha subido correctamente.";
+        $response = array('status' => 'success', 'message' => 'La imagen se ha subido correctamente.');
+        echo json_encode($response);
     } else {
-        echo "Hubo un error al subir la imagen.";
-        print_r(error_get_last());
+        $response = array('status' => 'error', 'message' => 'Hubo un error al subir la imagen.');
+        echo json_encode($response);
     }
 } else {
-    echo "No se subió ningún archivo, o hubo un error al subirlo.";
+    $response = array('status' => 'error', 'message' => 'No se subió ningún archivo, o hubo un error al subirlo.');
+    echo json_encode($response);
 }
-
 
 // Para los módulos y exámenes, como tienes varios, puedes recorrerlos en un bucle
 $nombreModulo = array();
@@ -29,7 +32,6 @@ $manualModulo = array();
 $paginaModulo = array();
 $examenModulo = array();
 
-
 for ($i = 1; $i <= $_POST['contador']; $i++) {
     if (isset($_FILES['txtManualModulo' . $i])) {
         if ($_FILES['txtManualModulo' . $i]['error'] == 0) {
@@ -38,18 +40,19 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
             $rutaDestinoManual = '/home/u909553968/domains/grammermx.com/public_html/RH/Learning/manuales/' . $nombreManual;
 
             if (move_uploaded_file($manualCurso['tmp_name'], $rutaDestinoManual)) {
-                echo "El manual se ha subido correctamente.";
+                $response = array('status' => 'success', 'message' => 'El manual se ha subido correctamente.');
+                echo json_encode($response);
             } else {
-                echo "Hubo un error al subir el manual.";
-                print_r(error_get_last());
+                $response = array('status' => 'error', 'message' => 'Hubo un error al subir el manual.');
+                echo json_encode($response);
             }
         } else {
-            echo "No se subió ningún manual, o hubo un error al subirlo.";
+            $response = array('status' => 'error', 'message' => 'No se subió ningún manual, o hubo un error al subirlo.');
+            echo json_encode($response);
         }
     }else{
-        echo "no existe";
+        $response = array('status' => 'error', 'message' => 'No existe el archivo.');
+        echo json_encode($response);
     }
 }
-
-// Ahora tienes todos los valores del formulario en variables PHP
 ?>
