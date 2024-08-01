@@ -169,9 +169,10 @@
                                placeholder="John Doe" onchange="rellenarTitulo()"/>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label" for="txtAreaCurso">Área</label>
-                        <input type="text" class="form-control" name="txtAreaCurso" id="txtAreaCurso"
-                               placeholder="ACME Inc."/>
+                        <label for="exampleFormControlSelect1" class="form-label">Área</label>
+                        <select class="form-select" name="txtAreaCurso" id="txtAreaCurso" aria-label="Default select example">
+                            <option selected>Seleccione área</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="txtDuracionCurso">Duración</label>
@@ -190,6 +191,11 @@
                     <div class="mb-3">
                         <label class="form-label" for="txtDuracionCurso">Imagen de curso</label>
                         <input type="file" class="form-control" name="txtImagen" id="txtImagen"
+                               placeholder="ACME Inc."/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="txtContacto">Contacto para dudas</label>
+                        <input type="text" class="form-control" name="txtContacto" id="txtContacto"
                                placeholder="ACME Inc."/>
                     </div>
 
@@ -403,6 +409,7 @@
         let txtAreaCurso = document.getElementById('txtAreaCurso').value;
         let txtDuracionCurso = document.getElementById('txtDuracionCurso').value;
         let txtDescripcionCurso = document.getElementById('txtDescripcionCurso').value;
+        let txtContacto = document.getElementById('txtContacto').value;
         let txtImagen = document.getElementById('txtImagen').files[0];
         let contador = document.getElementById('contador').value;
 
@@ -425,6 +432,7 @@
 // Crear un objeto FormData y agregar todos los datos del formulario
         let formData = new FormData();
         formData.append('txtNombreCurso', txtNombreCurso);
+        formData.append('txtContacto', txtContacto);
         formData.append('txtAreaCurso', txtAreaCurso);
         formData.append('txtDuracionCurso', txtDuracionCurso);
         formData.append('txtDescripcionCurso', txtDescripcionCurso);
@@ -449,7 +457,7 @@
             .then(data => {
                 if (data.status === 'success') {
                     Swal.fire({
-                        title: "Cursos ingresado",
+                        title: "Curso ingresado",
                         text: "Ya lo puedes ver en el inicio",
                         icon: "success"
                     });
@@ -460,6 +468,18 @@
                 }
             })
             .catch((error) => console.error('Error:', error));
+    }
+
+    function llenarAPU() {
+        $.getJSON('https://grammermx.com/RH/Learning/dao/admin/daoArea.php', function (data) {
+            var select = document.getElementById("txtAreaCurso");
+            for (var i = 0; i < data.data.length; i++) {
+                var createOption = document.createElement("option");
+                createOption.text = data.data[i].descripcion;
+                createOption.value = data.data[i].id_area;
+                select.appendChild(createOption);
+            }
+        });
     }
 </script>
 </body>
