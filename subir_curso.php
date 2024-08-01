@@ -159,7 +159,7 @@
 
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Cursos/</span> <span id="nombreLabel">Nombre</span></h4>
-                    <form enctype="multipart/form-data" action="dao/admin/insertCurso.php" onsubmit="return validarInputs()" method="post">
+
                     <div class="mb-3">
                         <label class="form-label" for="txtNombreCurso">Nombre</label>
                         <input type="text" class="form-control" name="txtNombreCurso" id="txtNombreCurso"
@@ -257,7 +257,7 @@
                             <button onclick="agregarModulo()" class="btn btn-primary">Agregar modulo</button>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-5">Enviar</button>
+                        <button class="btn btn-primary mt-5" onclick="validarInputs()">Enviar</button>
                     </div>
                         <input style="display: none" type="text" class="form-control" name="contador" id="contador"
                                placeholder="forms google.com"/>
@@ -388,10 +388,63 @@
 
         alert("Todos los campos de entrada están llenos.");
         return true;
+        subirData();
     }
 
     function rellenarTitulo(){
         document.getElementById("nombreLabel").innerText = document.getElementById("txtNombreCurso").value;
+    }
+
+    function subirData() {
+        let txtNombreCurso = document.getElementById('txtNombreCurso').value;
+        let txtAreaCurso = document.getElementById('txtAreaCurso').value;
+        let txtDuracionCurso = document.getElementById('txtDuracionCurso').value;
+        let txtDescripcionCurso = document.getElementById('txtDescripcionCurso').value;
+        let txtImagen = document.getElementById('txtImagen').files[0];
+        let contador = document.getElementById('contador').value;
+
+        let txtNombreModulo = [];
+        let txtDescripcionModulo = [];
+        let txtUrlModulo = [];
+        let txtManualModulo = [];
+        let txtPaginaModulo = [];
+        let txtFormulario = [];
+
+        for (let i = 1; i <= contador; i++) {
+            txtNombreModulo[i] = document.getElementById('txtNombreModulo' + i).value;
+            txtDescripcionModulo[i] = document.getElementById('txtDescripcionModulo' + i).value;
+            txtUrlModulo[i] = document.getElementById('txtUrlModulo' + i).value;
+            txtManualModulo[i] = document.getElementById('txtManualModulo' + i).files[0];
+            txtPaginaModulo[i] = document.getElementById('txtPaginaModulo' + i).value;
+            txtFormulario[i] = document.getElementById('txtFormulario' + i).value;
+        }
+
+// Crear un objeto FormData y agregar todos los datos del formulario
+        let formData = new FormData();
+        formData.append('txtNombreCurso', txtNombreCurso);
+        formData.append('txtAreaCurso', txtAreaCurso);
+        formData.append('txtDuracionCurso', txtDuracionCurso);
+        formData.append('txtDescripcionCurso', txtDescripcionCurso);
+        formData.append('txtImagen', txtImagen);
+        formData.append('contador', contador);
+
+        for (let i = 1; i <= contador; i++) {
+            formData.append('txtNombreModulo' + i, txtNombreModulo[i]);
+            formData.append('txtDescripcionModulo' + i, txtDescripcionModulo[i]);
+            formData.append('txtUrlModulo' + i, txtUrlModulo[i]);
+            formData.append('txtManualModulo' + i, txtManualModulo[i]);
+            formData.append('txtPaginaModulo' + i, txtPaginaModulo[i]);
+            formData.append('txtFormulario' + i, txtFormulario[i]);
+        }
+
+// Hacer la solicitud POST con Fetch API
+        fetch('dao/admin/insertCurso.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch((error) => console.error('Error:', error));
     }
 </script>
 </body>
