@@ -69,37 +69,44 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     $descripcionModulo = $_POST['txtDescripcionModulo'.$i];
     $urlModulo = $_POST['txtUrlModulo'.$i];
     $paginaModulo = $_POST['txtPaginaModulo'.$i];
-
     $formularioModulo = $_POST['txtFormulario'.$i];
 
-// Iniciar transacción
+    $response = insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo);
+}
+
+$conex->close();
+echo json_encode($response);
+
+function insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo) {
+    $response = array('status' => 'error', 'message' => 'Error al registrar solicitud');
+
+    // Iniciar transacción
     $conex->begin_transaction();
 
     $insertModulo = $conex->prepare("INSERT INTO `Modulos`(`id_curso`, `nombre`, `descripcion`, `url`, `manual`, `pagina`)
                                               VALUES (?, ?, ?, ?, ?, ?)");
     $insertModulo->bind_param("isssss", $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo);
     $rInsertModulo = $insertModulo->execute();
-    /*
-    // Obtener el último ID insertado
-    $id_modulo = $conex->insert_id;
-
-    $insertExamen = $conex->prepare("INSERT INTO `Examenes`(`id_modulo`, `urlExamenGoogle`)
-                                              VALUES (?, ?)");
-    $insertExamen->bind_param("is", $id_modulo, $formularioModulo);
-    $rInsertExamen = $insertExamen->execute();
-    */
 
     if(!$rInsertModulo) {
         $conex->rollback();
-        if(!$rInsertModulo){
-            $response = array('status' => 'error', 'message' => 'Error en Registrar Solicitud');
-        }
     } else {
-        $conex->commit();
-        $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
-    }
-    $conex->close();
-}
+        // Obtener el último ID insertado
+        $id_modulo = $conex->insert_id;
 
-echo json_encode($response);
+        $insertExamen = $conex->prepare("INSERT INTO `Examenes`(`id_modulo`, `urlExamenGoogle`)
+                                                  VALUES (?, ?)");
+        $insertExamen->bind_param("is", $id_modulo, $formularioModulo);
+        $rInsertExamen = $insertExamen->execute();
+
+        if(!$rInsertExamen){
+            $conex->rollback();
+        } else {
+            $conex->commit();
+            $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
+        }
+    }
+
+    return $response;
+}
 ?>
