@@ -52,6 +52,8 @@ if(!$rInsertSolicitud) {
 
 for ($i = 1; $i <= $_POST['contador']; $i++) {
 
+    $nombreManual = 'NA';
+
     if (isset($_FILES['txtManualModulo' . $i])) {
         if ($_FILES['txtManualModulo' . $i]['error'] == 0) {
             $manualCurso = $_FILES['txtManualModulo' . $i];
@@ -64,8 +66,6 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
         } else {
             $response = array('status' => 'error', 'message' => 'No se subió ningún manual, o hubo un error al subirlo.');
         }
-    }else{
-        $response = array('status' => 'error', 'message' => 'No existe el archivo.');
     }
 
     $nombreModulo = $_POST['txtNombreModulo'.$i];
