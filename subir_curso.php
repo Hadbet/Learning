@@ -469,7 +469,7 @@
             })
             .catch((error) => console.error('Error:', error));
     }
-
+    llenarAPU();
     function llenarAPU() {
         $.getJSON('https://grammermx.com/RH/Learning/dao/admin/daoArea.php', function (data) {
             var select = document.getElementById("txtAreaCurso");
