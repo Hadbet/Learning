@@ -1,6 +1,9 @@
 <?php
 header('Content-Type: application/json');
 include_once('../db/db_Learning.php');
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 $response = array('status' => 'success','message' => 'true');
 
