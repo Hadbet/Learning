@@ -92,9 +92,9 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     $rInsertExamen = $insertExamen->execute();
 
 
-    if(!$rInsertModulo) {
+    if(!$rInsertModulo || !$rInsertExamen) {
         $conex->rollback();
-        if(!$rInsertModulo){
+        if(!$rInsertModulo || !$rInsertExamen){
             $response = array('status' => 'error', 'message' => 'Error en Registrar Solicitud');
         }
     } else {
