@@ -85,16 +85,16 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
 
     // Obtener el último ID insertado
     $id_modulo = $conex->insert_id;
-
+/*
     $insertExamen = $conex->prepare("INSERT INTO `Examenes`(`id_modulo`, `urlExamenGoogle`)
                                               VALUES (?, ?)");
     $insertExamen->bind_param("is", $id_modulo, $formularioModulo);
     $rInsertExamen = $insertExamen->execute();
 
-
-    if(!$rInsertModulo || !$rInsertExamen) {
+*/
+    if(!$rInsertModulo) {
         $conex->rollback();
-        if(!$rInsertModulo || !$rInsertExamen){
+        if(!$rInsertModulo){
             $response = array('status' => 'error', 'message' => 'Error en Registrar Solicitud');
         }
     } else {
