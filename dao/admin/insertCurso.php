@@ -72,9 +72,6 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
 
     $formularioModulo = $_POST['txtFormulario'.$i];
 
-    $con = new LocalConector();
-    $conex = $con->conectar();
-
 // Iniciar transacción
     $conex->begin_transaction();
 
