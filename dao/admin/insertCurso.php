@@ -46,7 +46,7 @@ if(!$rInsertSolicitud) {
     $conex->commit();
     $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
 }
-
+/*
 for ($i = 1; $i <= $_POST['contador']; $i++) {
 
     if (isset($_FILES['txtManualModulo' . $i])) {
@@ -102,6 +102,6 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     }
     $conex->close();
 }
-
+*/
 echo json_encode($response);
 ?>
