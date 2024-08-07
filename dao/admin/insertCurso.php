@@ -74,7 +74,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     $paginaModulo = $_POST['txtPaginaModulo'.$i];
     $formularioModulo = $_POST['txtFormulario'.$i];
 
-    $response = insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo);
+    //$response = insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo);
 }
 
 $conex->close();
