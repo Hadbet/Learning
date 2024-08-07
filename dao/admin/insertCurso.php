@@ -74,7 +74,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
     $paginaModulo = $_POST['txtPaginaModulo'.$i];
     $formularioModulo = $_POST['txtFormulario'.$i];
 
-    //$response = insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo);
+    $response = insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo);
 }
 
 $conex->close();
@@ -94,6 +94,12 @@ function insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModu
     if(!$rInsertModulo) {
         $conex->rollback();
     } else {
+
+
+        $conex->commit();
+        $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
+
+        /*
         // Obtener el último ID insertado
         $id_modulo = $conex->insert_id;
 
@@ -108,7 +114,10 @@ function insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModu
             $conex->commit();
             $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
         }
+        */
     }
+
+
 
     return $response;
 }
