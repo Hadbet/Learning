@@ -81,8 +81,8 @@ $conex->close();
 echo json_encode($response);
 
 function insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo, $formularioModulo) {
-    $response = array('status' => 'error', 'message' => 'Error al registrar solicitud');
-
+    $response = array('status' => 'error', 'message' => 'Error al registrar  ID'.$id_curso.'Nombre'. $nombreModulo.'Descripcion'. $descripcionModulo.'Modulo'. $urlModulo.'Manual'. $nombreManual.'Pagina'. $paginaModulo.'formularioo'. $formularioModulo);
+/*
     // Iniciar transacción
     $conex->begin_transaction();
 
@@ -114,9 +114,9 @@ function insertarModuloExamen($conex, $id_curso, $nombreModulo, $descripcionModu
             $conex->commit();
             $response = array('status' => 'success', 'message' => 'Datos guardados correctamente');
         }
-        */
     }
 
+        */
 
 
     return $response;
