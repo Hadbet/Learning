@@ -82,7 +82,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
                                               VALUES (?, ?, ?, ?, ?, ?)");
     $insertModulo->bind_param("isssss", $id_curso, $nombreModulo, $descripcionModulo, $urlModulo, $nombreManual, $paginaModulo);
     $rInsertModulo = $insertModulo->execute();
-    /*
+
     // Obtener el último ID insertado
     $id_modulo = $conex->insert_id;
 
@@ -90,7 +90,7 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
                                               VALUES (?, ?)");
     $insertExamen->bind_param("is", $id_modulo, $formularioModulo);
     $rInsertExamen = $insertExamen->execute();
-    */
+
 
     if(!$rInsertModulo) {
         $conex->rollback();
@@ -105,4 +105,8 @@ for ($i = 1; $i <= $_POST['contador']; $i++) {
 }
 
 echo json_encode($response);
+
+function insertarModulo(){
+
+}
 ?>
