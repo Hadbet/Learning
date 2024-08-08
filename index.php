@@ -1,3 +1,21 @@
+<?php
+
+include_once('dao/db/db_Learning.php');
+
+    $con = new LocalConector();
+    $conex = $con->conectar();
+
+    $datos = mysqli_query($conex, "SELECT Cursos.id_curso, Cursos.nombre, Cursos.descripcion, Cursos.duracion, Cursos.id_area, Cursos.contacto, Cursos.imagen, 
+       Modulos.id_modulos, Modulos.nombre, Modulos.descripcion, Modulos.url, Modulos.manual, Modulos.pagina, 
+       Examenes.id_examen, Examenes.urlExamenGoogle
+FROM Cursos
+JOIN Modulos ON Cursos.id_curso = Modulos.id_curso
+JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
+
+
+
+?>
+
 <!DOCTYPE html>
 
 <html
@@ -232,95 +250,27 @@
 
                     <div class="row mb-5">
 
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img class="card-img card-img-left" src="images/premiunfreig.jpg"
-                                             alt="Card image"/>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">¿Cómo hacer un Premiun Freig?</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content.
-                                                This content is a little bit longer.
-                                            </p>
-                                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php
+                        while($row = mysqli_fetch_assoc($datos)) {
+                            // Generar el HTML para cada registro
+                            echo '<div class="col-md-6">
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img class="card-img card-img-left" src="images/premiunfreig.jpg" alt="Card image"/>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">' . $row['nombre'] . '</h5>
+                            <p class="card-text">' . $row['descripcion'] . '</p>
+                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                         </div>
-
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img class="card-img card-img-left" src="images/viaticos.png"
-                                             alt="Card image"/>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">¿Cómo hacer un viatico?</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content.
-                                                This content is a little bit longer.
-                                            </p>
-                                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img class="card-img card-img-left" src="images/bonosalida.png"
-                                             alt="Card image"/>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">¿Cómo hacer un bono de salida?</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content.
-                                                This content is a little bit longer.
-                                            </p>
-                                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img class="card-img card-img-left" src="images/soporteit.png"
-                                             alt="Card image"/>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">10 principios de cero defectos.</h5>
-                                            <p class="card-text">
-                                                This is a wider card with supporting text below as a natural lead-in to
-                                                additional content.
-                                                This content is a little bit longer.
-                                            </p>
-                                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+                        }
+                        ?>
 
                     </div>
 
