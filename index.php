@@ -270,6 +270,8 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
             </div>
         </div>';
                         }
+
+                        mysqli_close($conex);
                         ?>
 
                     </div>
