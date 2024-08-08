@@ -5,7 +5,7 @@ include_once('dao/db/db_Learning.php');
     $con = new LocalConector();
     $conex = $con->conectar();
 
-    $datos = mysqli_query($conex, "SELECT Cursos.id_curso, Cursos.nombre, Cursos.descripcion, Cursos.duracion, Cursos.id_area, Cursos.contacto, Cursos.imagen, 
+    $datos = mysqli_query($conex, "SELECT Cursos.id_curso, Cursos.nombre as nombre_curso, Cursos.descripcion as descripcion_curso, Cursos.duracion, Cursos.id_area, Cursos.contacto, Cursos.imagen, 
        Modulos.id_modulos, Modulos.nombre, Modulos.descripcion, Modulos.url, Modulos.manual, Modulos.pagina, 
        Examenes.id_examen, Examenes.urlExamenGoogle
 FROM Cursos
@@ -257,13 +257,13 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img class="card-img card-img-left" src="images/premiunfreig.jpg" alt="Card image"/>
+                        <img class="card-img card-img-left"  src="images/portadas/' . $row['imagen'] . '" alt="Card image"/>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">' . $row['nombre'] . '</h5>
-                            <p class="card-text">' . $row['descripcion'] . '</p>
-                            <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                            <h5 class="card-title">' . $row['nombre_curso'] . '</h5>
+                            <p class="card-text">' . $row['descripcion_curso'] . '</p>
+                            <a href="capacitacion.php?CRlwZgd5Y32MQ='.$row['id_curso'].'" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                         </div>
                     </div>
                 </div>
