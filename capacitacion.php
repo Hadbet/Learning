@@ -17,7 +17,7 @@ WHERE Cursos.id_curso = '$id_curso'");
 
 while ($row = mysqli_fetch_assoc($datos)) {
 
-    $url = $row['id_curso'];
+    $url = $row['url'];
     $nombreCurso = $row['nombre_curso'];
     $nombre = $row['nombre'];
 }
