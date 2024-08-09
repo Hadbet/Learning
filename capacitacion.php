@@ -1,3 +1,29 @@
+
+<?php
+
+include_once('dao/db/db_Learning.php');
+
+$con = new LocalConector();
+$conex = $con->conectar();
+$id_curso = $_GET['CRlwZgd5Y32MQ'];
+
+$datos = mysqli_query($conex, "SELECT Cursos.id_curso, Cursos.nombre as nombre_curso, Cursos.descripcion as descripcion_curso, Cursos.duracion, Cursos.id_area, Cursos.contacto, Cursos.imagen, 
+       Modulos.id_modulos, Modulos.nombre, Modulos.descripcion, Modulos.url, Modulos.manual, Modulos.pagina, 
+       Examenes.id_examen, Examenes.urlExamenGoogle
+FROM Cursos
+JOIN Modulos ON Cursos.id_curso = Modulos.id_curso
+JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo
+WHERE Cursos.id_curso = '$id_curso'");
+
+while ($row = mysqli_fetch_assoc($datos)) {
+
+    $url = $row['id_curso'];
+    $nombreCurso = $row['nombre_curso'];
+    $nombre = $row['nombre'];
+}
+
+mysqli_close($conex);
+?>
 <!DOCTYPE html>
 
 <html
@@ -172,7 +198,7 @@
                     </div>
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center gap-1" style="height: 50vh;">
-                        <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/0O4CLgXvbjU?si=U8G4zX68-SxHwcA0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe style="width: 100%; height: 100%;" src="<?php echo $url;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
                       <h5 class="card-title mt-4">Manejo de Aereos</h5>
                       <p class="card-text">
