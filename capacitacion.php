@@ -20,6 +20,8 @@ while ($row = mysqli_fetch_assoc($datos)) {
     $url = $row['url'];
     $nombreCurso = $row['nombre_curso'];
     $nombre = $row['nombre'];
+    $descripcion = $row['descripcion_curso'];
+    $contacto = $row['contacto'];
 }
 
 mysqli_close($conex);
@@ -200,9 +202,9 @@ mysqli_close($conex);
                       <div class="d-flex flex-column align-items-center gap-1" style="height: 50vh;">
                         <iframe style="width: 100%; height: 100%;" src="<?php echo $url;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
-                      <h5 class="card-title mt-4">Manejo de Aereos</h5>
+                      <h5 class="card-title mt-4"><?php echo $nombre;?></h5>
                       <p class="card-text">
-                        Aprenderas a mandar materiales por avioncitos, en este video se te enseñara paso a paso que hacer
+                          <?php echo $descripcion;?>
                       </p>
                       <h5 class="card-title mt-4">Contacto para dudas</h5>
                       <ul class="p-0 m-0">
@@ -215,7 +217,7 @@ mysqli_close($conex);
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
                               <h6 class="mb-0">Alma Bautista</h6>
-                              <small class="text-muted">alma.bautista@grammer.com</small>
+                              <small class="text-muted"><?php echo $contacto;?></small>
                             </div>
                           </div>
                         </li>
