@@ -30,7 +30,6 @@ while ($row = mysqli_fetch_assoc($datos)) {
     $embedUrl = str_replace("watch?v=", "embed/", $url);
 }
 
-mysqli_close($conex);
 ?>
 <!DOCTYPE html>
 
@@ -258,76 +257,31 @@ mysqli_close($conex);
                     </div>
                     <div class="card-body">
                       <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="images/semaforo/verde.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Maritimos</small>
-                              <h6 class="mb-0">Mandar materiales por barco</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0 text-success">Aprobado</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="images/semaforo/rojo.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Aereo</small>
-                              <h6 class="mb-0">Mandar materiales por avioncito</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0 text-danger">Reprobado</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="images/semaforo/amarillo.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Tierra</small>
-                              <h6 class="mb-0">Mandar materiales por tierra</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0 text-warning">Pendiente</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="images/semaforo/amarillo.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">En burro</small>
-                              <h6 class="mb-0">Mandar materiales con filemon</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0 text-warning">Pendiente</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-4 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <img src="images/semaforo/amarillo.png" alt="User" class="rounded" />
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <small class="text-muted d-block mb-1">Por uber</small>
-                              <h6 class="mb-0">Mandar materiales por uber</h6>
-                            </div>
-                            <div class="user-progress d-flex align-items-center gap-1">
-                              <h6 class="mb-0 text-warning">Pendiente</h6>
-                            </div>
-                          </div>
-                        </li>
+
+                          <?php
+                          while ($row = mysqli_fetch_assoc($datos)) {
+
+                              $nombreModulo = $row['nombre'];
+                              $descripcionModulo = $row['descripcion'];
+
+                              echo '<li class="d-flex mb-4 pb-1">
+            <div class="avatar flex-shrink-0 me-3">
+                <img src="images/semaforo/verde.png" alt="User" class="rounded" />
+            </div>
+            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                <div class="me-2">
+                    <small class="text-muted d-block mb-1">' . $nombreModulo . '</small>
+                    <h6 class="mb-0">' . $descripcionModulo . '</h6>
+                </div>
+                <div class="user-progress d-flex align-items-center gap-1">
+                    <h6 class="mb-0 text-success">Aprobado</h6>
+                </div>
+            </div>
+          </li>';
+                          }
+
+                          mysqli_close($conex);
+                          ?>
                       </ul>
                     </div>
                   </div>
