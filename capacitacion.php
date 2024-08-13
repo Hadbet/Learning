@@ -22,6 +22,8 @@ while ($row = mysqli_fetch_assoc($datos)) {
     $nombre = $row['nombre'];
     $descripcion = $row['descripcion_curso'];
     $contacto = $row['contacto'];
+
+    $embedUrl = str_replace("watch?v=", "embed/", $url);
 }
 
 mysqli_close($conex);
@@ -200,7 +202,7 @@ mysqli_close($conex);
                     </div>
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center gap-1" style="height: 50vh;">
-                        <iframe style="width: 100%; height: 100%;" src="<?php echo $url;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <iframe style="width: 100%; height: 100%;" src="<?php echo $embedUrl;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                       </div>
                       <h5 class="card-title mt-4"><?php echo $nombre;?></h5>
                       <p class="card-text">
