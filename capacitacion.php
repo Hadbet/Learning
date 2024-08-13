@@ -16,7 +16,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo
 WHERE Cursos.id_curso = '$id_curso'");
 
 while ($row = mysqli_fetch_assoc($datos)) {
-    $id_curso = $row['id_curso'];
+    $id_cursoDos = $row['id_curso'];
     $url = $row['url'];
     $nombreCurso = $row['nombre_curso'];
     $nombre = $row['nombre'];
@@ -259,7 +259,7 @@ while ($row = mysqli_fetch_assoc($datos)) {
                       <ul class="p-0 m-0">
 
                           <?php
-                          $datosDos = mysqli_query($conex, "SELECT * from Modulos where id_curso='$id_curso'");
+                          $datosDos = mysqli_query($conex, "SELECT * from Modulos where id_curso='$id_cursoDos'");
 
                           while ($rowDos = mysqli_fetch_assoc($datosDos)) {
 
