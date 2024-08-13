@@ -195,7 +195,7 @@ mysqli_close($conex);
                   <div class="card h-100">
                     <div class="card-header d-flex align-items-center justify-content-between pb-0">
                       <div class="card-title mb-4">
-                        <h5 class="m-0 me-2"><?php echo $url;?></h5>
+                        <h5 class="m-0 me-2"><?php echo $nombreCurso;?></h5>
                       </div>
                     </div>
                     <div class="card-body">
