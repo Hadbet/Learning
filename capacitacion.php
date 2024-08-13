@@ -23,6 +23,10 @@ while ($row = mysqli_fetch_assoc($datos)) {
     $descripcion = $row['descripcion_curso'];
     $contacto = $row['contacto'];
 
+    $parts = explode("@", $contacto);
+    $nameParts = explode(".", $parts[0]);
+    $name = ucfirst($nameParts[0]) . ' ' . ucfirst($nameParts[1]);
+
     $embedUrl = str_replace("watch?v=", "embed/", $url);
 }
 
@@ -218,7 +222,7 @@ mysqli_close($conex);
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
-                              <h6 class="mb-0">Alma Bautista</h6>
+                              <h6 class="mb-0"><?php echo $name;?></h6>
                               <small class="text-muted"><?php echo $contacto;?></small>
                             </div>
                           </div>
