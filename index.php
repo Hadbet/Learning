@@ -2,6 +2,15 @@
 
 include_once('dao/db/db_Learning.php');
 
+session_start();
+
+if ($_SESSION["nomina"] == "" && $_SESSION["nomina"]== null && $_SESSION["tag"]== "" && $_SESSION["tag"]== null) {
+    echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=login.html'>";
+    session_destroy();
+}else{
+    session_start();
+}
+
     $con = new LocalConector();
     $conex = $con->conectar();
 
@@ -119,7 +128,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="images/00030292.png" alt class="w-px-40 h-auto rounded-circle"/>
+                                    <img src="images/<?php echo $_SESSION["nomina"];?>.png" alt class="w-px-40 h-auto rounded-circle"/>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
