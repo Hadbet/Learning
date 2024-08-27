@@ -1,6 +1,5 @@
 <?php
 
-require 'daoLoginMet.php';
 include_once('../db/db_Parte.php');
 
 if(isset($_POST['btnEnviar'])){
@@ -30,8 +29,6 @@ if(isset($_POST['btnEnviar'])){
     }
 }
 
-
-
 if(isset($_POST['btnSalir'])){
     session_start();
     session_destroy();
@@ -39,12 +36,9 @@ if(isset($_POST['btnSalir'])){
     echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../Historico.html'>";
 }
 
-
-
 if(isset($_POST['btnRegistro'])){
     echo "<script>alert('Acceso Correcto')</script>";
 }
-
 
 function cliente($Nomina, $Tag)
 {
@@ -61,9 +55,5 @@ function cliente($Nomina, $Tag)
         return 0;
     }
 }
-
-
-
-
 
 ?>
