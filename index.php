@@ -137,13 +137,13 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="images/00030292.png" alt
+                                                    <img src="https://grammermx.com//Fotos/<?php echo $_SESSION["nomina"];?>.png" alt
                                                          class="w-px-40 h-auto rounded-circle"/>
                                                 </div>
                                             </div>
                                             <div class="flex-grow-1">
-                                                <span class="fw-semibold d-block">Señor Hugo</span>
-                                                <small class="text-muted">Admin</small>
+                                                <span class="fw-semibold d-block"><?php echo $_SESSION["nomina"];?></span>
+                                                <small class="text-muted">Usuario normal</small>
                                             </div>
                                         </div>
                                     </a>
