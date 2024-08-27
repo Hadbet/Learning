@@ -19,9 +19,10 @@ if(isset($_POST['btnEnviar'])){
 
     $statusLogin = cliente($Nomina, $contra);
 
-    if($statusLogin == 1){
+    if($statusLogin !== 0){
         $_SESSION['nomina'] = $Nomina;
         $_SESSION['tag'] = $contra;
+        $_SESSION['nombre'] = $statusLogin;
         echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=../../index.php'>";
     }else if($statusLogin == 0){
         echo "<script>alert('Acceso Denegado')</script>";
@@ -50,7 +51,8 @@ function cliente($Nomina, $Tag)
     $userData = array();
 
     if (mysqli_num_rows($rsconsPro) == 1) {
-        return 1;
+        $userData = mysqli_fetch_assoc($rsconsPro);
+        return $userData['NomUser'];
     } else {
         return 0;
     }
