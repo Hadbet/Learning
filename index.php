@@ -128,7 +128,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img class="img-thumbnail" src="https://grammermx.com//Fotos/<?php echo $_SESSION["nomina"];?>.png" alt class="w-px-40 h-auto rounded-circle"/>
+                                    <img src="https://grammermx.com//Fotos/<?php echo $_SESSION["nomina"];?>.png" alt class="w-px-40 h-auto rounded-circle"/>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
