@@ -12,7 +12,7 @@
         <!-- Search -->
         <div class="navbar-nav align-items-center">
             <div class="nav-item d-flex align-items-center">
-                <i class="">Bienvenido a Grammer Book<span><?php echo $_SESSION["nombre"];?></span></i>
+                <i class="">Bienvenido a Grammer Book <span><?php echo $_SESSION["nombre"];?></span></i>
             </div>
         </div>
         <!-- /Search -->
