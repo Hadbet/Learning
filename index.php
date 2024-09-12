@@ -217,7 +217,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -229,7 +229,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -241,7 +241,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -253,7 +253,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -265,7 +265,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -277,7 +277,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -289,7 +289,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                     </div>
@@ -298,6 +298,8 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                             class="btn btn-primary"
                             data-bs-toggle="modal"
                             data-bs-target="#modalCenter"
+                            id="modalAviso"
+                            style="display: none"
                     >
                         Launch modal
                     </button>
@@ -307,7 +309,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="modalCenterTitle">Modal title</h5>
+                                    <h5 class="modal-title" id="modalCenterTitle">Aviso</h5>
                                     <button
                                             type="button"
                                             class="btn-close"
@@ -317,42 +319,16 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </div>
                                 <div class="modal-body">
                                     <div class="row">
-                                        <div class="col mb-3">
-                                            <label for="nameWithTitle" class="form-label">Name</label>
-                                            <input
-                                                    type="text"
-                                                    id="nameWithTitle"
-                                                    class="form-control"
-                                                    placeholder="Enter Name"
-                                            />
+                                        <div class="col mb-3 text-center">
+                                            <img src="images/semaforo/amarillo.png" class="img-fluid text-center" style="width: 50%">
                                         </div>
-                                    </div>
-                                    <div class="row g-2">
-                                        <div class="col mb-0">
-                                            <label for="emailWithTitle" class="form-label">Email</label>
-                                            <input
-                                                    type="text"
-                                                    id="emailWithTitle"
-                                                    class="form-control"
-                                                    placeholder="xxxx@xxx.xx"
-                                            />
-                                        </div>
-                                        <div class="col mb-0">
-                                            <label for="dobWithTitle" class="form-label">DOB</label>
-                                            <input
-                                                    type="text"
-                                                    id="dobWithTitle"
-                                                    class="form-control"
-                                                    placeholder="DD / MM / YY"
-                                            />
-                                        </div>
+                                        <h2 class="text-center">La página aún está en construcción</h2>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                                         Close
                                     </button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
                                 </div>
                             </div>
                         </div>
@@ -404,5 +380,10 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+    function aviso() {
+        document.getElementById("modalAviso").click();
+    }
+</script>
 </body>
 </html>
