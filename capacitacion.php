@@ -210,6 +210,48 @@ while ($row = mysqli_fetch_assoc($datos)) {
                 </div>
                 <!--/ Transactions -->
               </div>
+
+                <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalCenter"
+                        id="modalAviso"
+                        style="display: none"
+                >
+                    Launch modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalCenterTitle">Aviso</h5>
+                                <button
+                                        type="button"
+                                        class="btn-close"
+                                        data-bs-dismiss="modal"
+                                        aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col mb-3 text-center">
+                                        <img src="images/semaforo/amarillo.png" class="img-fluid text-center" style="width: 50%">
+                                    </div>
+                                    <h2 class="text-center">La página aún está en construcción</h2>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- / Content -->
 
