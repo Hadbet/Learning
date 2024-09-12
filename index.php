@@ -114,7 +114,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 <div class="d-flex align-items-end row">
                                     <div class="col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Bienvenido Hugo! 🎉</h5>
+                                            <h5 class="card-title text-primary">Bienvenido <?php echo $_SESSION["nombre"];?>! 🎉</h5>
                                             <p class="mb-4">
                                                 Este portal tiene <span class="fw-bold">todo lo que necesitas saber sobre grammer</span>
                                                  como cursos generales, capacitaciones por puesto y por áreas.
