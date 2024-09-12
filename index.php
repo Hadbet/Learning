@@ -42,7 +42,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
             content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Hugo Learning</title>
+    <title>GrammBook Learning</title>
 
     <meta name="description" content=""/>
 
