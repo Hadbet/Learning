@@ -217,7 +217,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -229,7 +229,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -241,7 +241,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -253,7 +253,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -265,7 +265,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -277,7 +277,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                         <div class="card">
@@ -289,7 +289,7 @@ JOIN Examenes ON Modulos.id_modulos = Examenes.id_modulo");
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a href="" onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
+                                <a onclick="aviso()" class="btn btn-sm btn-outline-primary">Ver capacitación</a>
                             </div>
                         </div>
                     </div>
