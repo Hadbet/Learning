@@ -41,17 +41,17 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-account-settings-account.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Account">Nominas</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Notifications">Relaciones laborales</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-account-settings-connections.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Connections">Entrenamiento</div>
                     </a>
                 </li>
@@ -64,17 +64,17 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item <?php if (str_contains($enlace_actual, 'trafico')) {echo $claseEstatica;}?>">
-                    <a href="capacitacion.php?trafico" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Basic">Trafico</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="auth-register-basic.html" class="menu-link" >
+                    <a onclick="aviso()" class="menu-link" >
                         <div data-i18n="Basic">Planeadores</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="auth-forgot-password-basic.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Basic">Almacen</div>
                     </a>
                 </li>
@@ -87,12 +87,12 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Error">Ingeniero de GPS</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Under Maintenance">Practicante de GPS</div>
                     </a>
                 </li>
@@ -105,12 +105,12 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Error">Error</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Under Maintenance">Under Maintenance</div>
                     </a>
                 </li>
@@ -123,12 +123,12 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Error">Routing</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Under Maintenance">Practicantes</div>
                     </a>
                 </li>
@@ -141,12 +141,12 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="pages-misc-error.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Error">Soporte</div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <a onclick="aviso()" class="menu-link">
                         <div data-i18n="Under Maintenance">Programación</div>
                     </a>
                 </li>
